@@ -1,0 +1,90 @@
+@font-face
+{
+    src: url("../fonts/Piedra-Regular.ttf");
+    font-family: priedra;
+}
+@font-face
+{
+    src: url("../fonts/RobotoSlab-VariableFont_wght.ttf");
+    font-family: roboto;
+}
+
+body
+{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-sizing:border-box;
+     min-height: 100vh;
+     margin: 0;
+     padding: 0;
+     background-color: rgb(172, 129, 201)
+    
+}
+.video 
+{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index:0;
+    opacity: 50%;
+}
+  
+hr
+{
+    opacity: 0%;
+}
+.form
+{
+    box-sizing:border-box;
+    width: 400px;
+    border-radius: 10px;
+    padding: 30px;
+    transition-delay: 0.3s;
+    transition-duration: 0.7s;
+    background-color: rgb(161, 86, 86);
+    z-index:1;
+}
+.form:hover
+{
+     background-color: brown;
+}
+.form h1
+{
+     text-align: center;
+     font-family: priedra;
+}
+
+.form label
+{
+    font-family: roboto;
+}
+.form input
+{
+    width: 100%;
+    border: 5px black;
+    height: 20px;
+    padding: 5px;
+    
+}
+.submit
+{
+    box-sizing:border-box;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    line-height: 30px;
+    font-family: priedra ;
+    background-color: rgb(180, 103, 52);
+    border: 0px;
+    border-radius: 10px;
+    transition-delay: 0.1s;
+    transition-duration: 0.3s;
+}
+.submit:hover
+{
+    
+    font-size: 30px;
+}

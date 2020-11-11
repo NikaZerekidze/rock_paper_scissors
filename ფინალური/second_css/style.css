@@ -1,0 +1,258 @@
+@font-face
+{
+    src: url("../fonts/FredokaOne-Regular.ttf");
+    font-family: fedoka;
+}
+@font-face
+{
+    src: url("../fonts/Orbitron-VariableFont_wght.ttf");
+    font-family: orbiton;
+}
+@font-face
+{
+    src: url("../fonts/PressStart2P-Regular.ttf");
+    font-family: bituri;
+}
+
+body
+{
+   background-color: #17a3d6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    
+    
+}
+
+  
+.header
+{
+    
+    
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+
+}
+.header h1
+{
+    font-size: 80px;
+    font-family: fedoka;
+    color: #0d215a;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+    from {
+    
+      text-shadow: 0px 0px 30px #fff, 0px 20px 20px #fff, 0px 20px 30px #7EC8E3 , 0 20 40px  #0000FF, 10 0 50px #0404ac, 0 20 60px #000C66, 0 0 60px #050A30;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px  #93d1e7 , 0 0 40px #7EC8E3, 0 0 50px #0000FF, 0 0 60px #0404ac, 0 0 70px #000C66, 0 0 80px #050A30;
+    }
+  }
+
+.video 
+{
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index:0;
+      opacity: 50%;
+}
+      
+
+h2
+{
+    font-family: orbiton;
+    width: auto;
+    text-align: center;
+}
+.registration
+{
+    width: 80px;
+    height: 80px; 
+    transition-delay: 0.1s;
+    transition-duration: 0.2s;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    
+}
+
+.registration:hover
+{
+    width: 100px;
+    height: 100px;
+}
+
+.content
+{
+    
+   
+    width: 100%;
+    height: auto;
+    font-family: orbiton;
+   
+    display: inline-block;
+ 
+    text-align:center;
+    
+    
+    
+    
+   position: relative;
+}
+   
+    
+
+
+.content div
+{
+    
+   
+    display: inline-block;
+    width: auto;
+    justify-content: center;
+    text-align: center;
+   
+    
+    
+}
+.vs
+{
+    width: auto;
+    max-width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+.you
+{
+    height: 150px;
+    box-sizing: border-box;
+    left: 30%;
+    position: absolute;
+    
+}
+.you img
+{
+    width: 100px;
+    border: 6px solid rgb(0, 0, 141);
+    border-radius: 20%;
+}
+
+.opponent
+{ 
+    position: absolute;
+    height: 160px;
+    right: 30%;
+    box-sizing: border-box;
+}
+.opponent img
+{
+    width: 100px;
+    border: 6px solid rgb(0, 0, 141);
+    border-radius: 20%;
+}
+footer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto; 
+    position:fixed;
+    bottom: 0;
+    box-sizing: border-box;
+    
+}
+
+footer div
+{
+    box-sizing: border-box;
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    min-width: 100px;
+    padding: 80px;
+    
+    
+   
+}
+
+
+footer div img
+{
+
+   
+    width: 70px;
+    height: 70px;
+    border: 15px;
+    border-radius: 60%;
+    background-color: rgb(23, 228, 200);
+    transition-duration: 0.3s;
+    
+}
+
+footer div img:hover
+{
+
+   
+    background-color: rgb(235, 186, 28);
+    
+}
+
+
+
+.middle
+{
+    width: 100%;
+    text-align: center;
+    margin-top: 70px;
+    height: auto;
+    font-size: 30px;
+    
+}
+
+.score
+{
+    width: 100%;
+    text-align: center;
+}
+.score div
+{
+    display: inline-block;
+    font-size: 40px;
+    font-family: fedoka;
+    background-color: #031130;
+    color: #7EC8E3;
+    width: 8%;
+    border-radius: 40%;
+}
+.your_score
+{
+    margin-right: 50px;
+}
+.enemy_score
+{
+    margin-left: 50px;
+}
+.middle h2
+{
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 10px;
+    color: #EDDE7A;
+    font-family: bituri;
+    animation: win 2s;
+    
+}    
+

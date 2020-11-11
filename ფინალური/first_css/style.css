@@ -1,0 +1,73 @@
+@font-face
+{
+    src: url("../fonts/HoltwoodOneSC-Regular.ttf");
+    font-family: holtwood;
+
+}
+
+body
+{
+    
+    background-color: #050A30;
+    color:#9505E3;
+    font-family: holtwood;
+    
+}
+
+h1
+{
+    text-align: center;
+    font-size: 100px;
+    margin-top: 70px;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    from {
+    
+      text-shadow: 0px 5px 10px #fff, 0 0 20px #fff, 0px 10px 30px #B637FB , 0 0 40px  #9505E3, 0 0 50px #7E1E80, 0 0 60px #d60905, 0 0 60px #340744;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px  #B637FB , 0 0 40px #9505E3, 0 0 50px #7E1E80, 0 0 60px #6d2ada, 0 0 70px #340744, 0 0 80px #3606a5;
+    }
+  }
+
+.fighters
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 200px;
+  margin-left: 150px;
+}
+.fighters div
+{
+  margin: 20px;
+  width: 300px;
+}
+.info
+{
+  opacity: 0;
+  transition: 0.15s;
+  transition-delay: 0.07;
+}
+
+img
+{
+  opacity: 50%;
+  transition: 0.2s;
+  transition-delay: 0.1s;
+}
+img:hover 
+{
+  opacity: 100%;
+ 
+
+}
+img:hover + .info
+{
+  opacity: 100%;
+  color: rgb(184, 9, 90);
+}

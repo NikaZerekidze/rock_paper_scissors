@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play</title>
+    <link rel="stylesheet" href="second_css/style.css">
+</head>
+<body>
+      
+    <video autoplay muted loop id="video" class="video">
+        <source src="img/main.mp4" type="video/mp4">
+    </video>        
+   <header class="header">
+        <h1>FIGHT!</h1>
+        <img id="registration" class="registration" src="img/login.svg" >
+   </header>
+   
+    <div id="content" class="content">
+        <div id="you" class="you">
+            <h2 class="player_name" id="player_name"></h2>
+            <img id="player"  src="">
+        </div>
+
+        <img id="vs" class="vs" src="img/vs.svg" >
+
+        <div id="opponent" class="opponent">
+            <h2 id="enemy">enemy</h2>
+            <img id="enemy" src="img/meeqvse.jpg" >
+    
+        </div>
+    </div>
+
+    <div id="middle" class="middle"></div>
+
+    <div id="score" class="score">
+        <div class="your_score" id="your_score">
+            <p id="playerScore" >0</p>
+        </div>
+        <div class="enemy_score" id="enemy_score">
+            <p id="opponentScore" >0</p>
+        </div>
+    </div>
+
+    <footer>
+        <div id="paper_div" class="paper_div" >
+            <img  id="paper" class="paper" src="img/paper.svg" >
+        </div>
+        <div>
+            <img id="rock" class="rock" src="img/rock.svg" >
+        </div>
+        <div>
+            <img id="scissors" class="scissors" src="img/scissors.svg">
+        </div>
+    </footer>
+    
+
+    <script>
+
+var req = new XMLHttpRequest();
+        var enemies =[];
+        req.open('GET', 'http://dummy.restapiexample.com/api/v1/employees');
+        req.addEventListener('load',function chooseName(){
+            var obj = JSON.parse(this.responseText);
+            var i;
+            for (i=0; i<6; i++)
+            {
+                console.log(obj.data[i].employee_name);
+                enemies.push(obj.data[i].employee_name);
+            }
+            var randomItem = enemies[Math.floor(Math.random()*enemies.length)];
+            sessionStorage.setItem('enemy', randomItem);
+        });
+        document.getElementById("enemy").innerHTML=sessionStorage.getItem('enemy');
+
+        req.addEventListener('error',function(){
+            console.log("you win!!!")
+            
+        });
+        
+        req.send();
+        ///
+        
+        var username=document.getElementById("registration");
+        var text=document.getElementById("player_name");
+        
+        username.addEventListener("click", function()
+        {
+            window.location = "registration.html";
+
+        })
+        
+        var you=localStorage.getItem('name');
+        text.innerHTML=you;
+
+        var item=sessionStorage.getItem('character');
+        document.getElementById("player").src=item;
+
+        
+    //     var enemyPicture = document.getElementById("enemy");
+        
+    //    var pic = sessionStorage.getItem("enemypic");
+    //    enemyPicture.src=pic;
+
+        ////
+
+        var paper=document.getElementById("paper");
+        var rock=document.getElementById("rock");
+        var scissors=document.getElementById("scissors");
+        var middle =document.getElementById("middle");
+
+        
+
+        function opponentChoice()
+        {
+            var choices = [ "paper" , "rock", "scissors"];
+            var random = choices[Math.floor(Math.random() * choices.length)]
+            return random;
+           
+            
+        }
+          
+        var yourCount=0; 
+        var enemyCount=0; 
+        var element=document.createElement("h2");
+        middle.appendChild(element);
+
+        
+        playerScore=document.getElementById("playerScore");
+        opponentScore=document.getElementById("opponentScore");
+
+        
+        
+        function playersChoice(choice)
+        {
+            var enemychoice = opponentChoice();
+
+            if(choice===enemychoice)
+            {
+               
+                element.innerHTML="DRAW";
+                element.style.border = " 5px solid #E68640";
+                
+               
+            }
+            switch(choice + enemychoice)
+            {
+                case "rockscissors":
+                case "paperrock" :
+                case "scissorspaper":
+                    element.innerHTML="YOU WIN";
+                    element.style.border = " 5px solid #E68640";
+                    yourCount+=1;
+                    playerScore.innerHTML=yourCount;
+                break;
+
+                case "scissorsrock":
+                case "paperscissors":
+                case "rockpaper":
+                    element.innerHTML="YOU LOSE";
+                    element.style.border = " 5px solid #E68640";
+                    enemyCount+=1;
+                    opponentScore.innerHTML=enemyCount;
+                break;            
+            }
+            
+           
+        }
+
+        paper.addEventListener("click", function()
+        {
+            playersChoice("paper");
+        })
+
+        rock.addEventListener("click", function()
+        {
+           playersChoice("rock");
+        })
+        
+        scissors.addEventListener("click", function()
+        {
+            playersChoice("scissors");
+
+        })
+
+
+    </script>
+</body>
+</html>

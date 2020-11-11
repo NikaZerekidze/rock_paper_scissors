@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>log in</title>
+    <link rel="stylesheet" href="reg_css/style.css">
+</head>
+<body>
+    
+    <form  id="form" class="form">
+        <h1>Creat Account</h1>
+        <label for="email"><b>Email</b></label>
+        <hr>
+        <input type="text" placeholder="Enter Email" name="email"  class="email" id="email" required>
+        <hr>
+
+        <label for="psw"><b>Password</b></label>
+        <hr>
+        <input type="password" placeholder="Enter Password" name="psw"  class="password" id="password" required>
+        <hr>
+
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <hr>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat"  class="password2" id="password2"  required>
+        <hr>
+
+        <label for="name"><b>Name</b></label>
+        <hr>
+        <input type="text" placeholder="Enter Name" name="Name"  class="name" id="name" pattern = “[A-Za-z]” required>
+        <hr>
+
+        <button type="submit" class="submit" id="submit" >Register</button>
+    
+    </form>
+    <video autoplay muted loop id="video" class="video">
+        <source src="img/video.mp4" type="video/mp4">
+    </video>
+
+    <script>
+        var form = document.getElementById("form");
+        var email = document.getElementById("email");
+        var password = document.getElementById("password");
+        var password2 = document.getElementById("password2");
+        var username = document.getElementById("name");
+        var submit = document.getElementById("submit");
+
+        submit.addEventListener("click", function(event)
+        {
+            event.preventDefault();
+            const emailValue = email.value.trim();
+            const passwordValue = password.value.trim();
+            const password2Value = password2.value.trim();
+            const nameValue = username.value.trim();
+            
+
+            if( emailValue && passwordValue && password2Value && nameValue !== "")
+            {
+                
+                if (validateEmail(emailValue)!=true) 
+                {
+                    alert("Not valid email");
+                } 
+               
+                if(passwordValue.length <= 5)
+                {
+                    alert("too short")
+                }
+                if(passwordValue != password2Value)
+                {
+                    alert("not the same")
+                }
+                if(!isNaN(nameValue))
+                {
+                alert("Please Enter Characters");
+                }
+             
+                if (nameValue.length>10 )
+                {
+                    alert("long username")
+                }
+               
+                if(validateEmail(emailValue)==true && passwordValue.length > 5 && passwordValue == password2Value && nameValue.length<10 && isNaN(nameValue) )
+                {
+                    alert("correct");
+                    var playersName=localStorage.setItem('name', nameValue);
+                    window.location = "second.html";
+                }
+
+            }
+            else
+            {
+                alert("NO");
+            }
+        })
+
+        
+        function validateEmail(emailValue) 
+        {
+            const val = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return val.test(emailValue);
+         }
+
+        
+                
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="first_css/style.css">
+</head>
+<body>
+    <h1>CHOOSE YOUR FIGHTER</h1>
+    <div class="fighters" id="fighters">
+        <div class="first" id="first"> <img src="img/pirveli.jpg" onclick="page(this.src)"><h2 class="info">Ryu</h2> </div>
+        <div class="second" id="second"> <img src="img/meore.jpg" onclick="page(this.src)"> <h2 class="info">Cammy</h2> </div>
+        <div class="third" id="third"> <img src="img/mesame.jpg" onclick="page(this.src)"><h2 class="info">T.Hawk</h2></div>
+        <div class="fourth" id="fourth"><img src="img/meotxe.jpg" onclick="page(this.src)"><h2 class="info">Blanka</h2></div>
+        <div class="fifth" id="fifth"><img src="img/mexute.jpg" onclick="page(this.src)"><h2 class="info">E.Honda</h2></div>
+        <div class="sixth" id="sixth"><img src="img/meeqvse.jpg" onclick="page(this.src)"><h2 class="info">Chun Li</h2></div>
+        <div class="seventh" id="seventh"><img src="img/meshvide.jpg" onclick="page(this.src)"><h2 class="info">Zangief</h2></div>
+        <div class="eighth" id="eighth"><img src="img/merve.jpg" onclick="page(this.src)"><h2 class="info">M.Bison</h2></div>
+        <div class="ninth" id="ninth"><img src="img/mecxre.jpg" onclick="page(this.src)"><h2 class="info">Dee Jay</h2></div>
+        <div class="tenth" id="tenth"><img src="img/meate.jpg" onclick="page(this.src)"><h2 class="info">Feilong</h2></div>
+    </div>
+   <script>
+      
+       
+       function page(_src)
+       {
+        window.location = "second.html";
+        sessionStorage.setItem('character', _src);
+       }
+       
+        // var enemyPictures =["img/pirveli.jpg", "img/meore.jpg", "img/mesame.jpg", "img/meotxe.jpg", "img/mexute.jpg", "img/meeqvse.jpg", "img/meshvide.jpg", "img/merve.jpg", "img/mecxre.jpg", "img/meate.jpg"];
+        // var randPic= enemyPictures[Math.floor(Math.random()*enemyPictures.length)];
+        // var picture=randPic.replace(/['"]+/g, "");
+        // sessionStorage.setItem("enemypic",picture);
+
+   </script>
+
+</body>
+</html>
